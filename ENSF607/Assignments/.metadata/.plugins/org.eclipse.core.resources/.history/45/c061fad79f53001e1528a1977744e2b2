@@ -1,0 +1,69 @@
+import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Order {
+	
+	private int orderId;
+	
+	private Date dateOrdered;
+	
+	private List<OrderItem> orderItems;
+
+	public Order(int orderId, Date dateOrdered) {
+		
+		this.orderId = orderId;
+		
+		this.dateOrdered = dateOrdered;
+		
+		this.orderItems = new ArrayList<>();
+	}
+
+	public int getOrderId() {
+		
+		return orderId;
+	}
+
+	public Date getDateOrdered() {
+		
+		return dateOrdered;
+	}
+
+	public List<OrderItem> getOrderItems() {
+		
+		return orderItems;
+	}
+
+	public void addItem(OrderItem orderItem) {
+		
+		orderItems.add(orderItem);
+	}
+
+	public double getTotalAmount() {
+		
+		double totalAmount = 0.0;
+		
+		for (OrderItem orderItem : orderItems) {
+			
+			totalAmount += orderItem.getSubtotal();
+		}
+		return totalAmount;
+	}
+
+	@Override
+	public String toString() {
+		
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append("ORDER ID: ").append(orderId).append("\n");
+		
+		sb.append("Date Ordered: ").append(dateOrdered).append("\n");
+		
+		for (OrderItem orderItem : orderItems) {
+			
+			sb.append(orderItem.toString()).append("\n");
+		}
+		
+		return sb.toString();
+	}
+}

@@ -1,0 +1,24 @@
+@startuml
+interface Switchable {
+  +turnOn()
+  +turnOff()
+}
+
+class LightBulb {
+  +turnOn()
+  +turnOff()
+}
+
+class Switch {
+  +control()
+}
+
+class Dimmer {
+  +control(brightness: int)
+}
+
+Switchable <|.. LightBulb
+Switch --> Switchable
+Dimmer --> Switchable
+
+@enduml

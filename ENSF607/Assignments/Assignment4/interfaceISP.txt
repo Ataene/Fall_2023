@@ -1,0 +1,36 @@
+@startuml
+interface Worker {
+  +work()
+}
+
+interface Eater {
+  +eat()
+}
+
+interface Sleeper {
+  +sleep()
+}
+
+class Engineer implements Worker, Eater {
+  +work()
+  +eat()
+}
+
+class Janitor implements Worker, Sleeper {
+  +work()
+  +sleep()
+}
+
+class Chef implements Worker, Eater {
+  +work()
+  +eat()
+}
+
+Worker <|.. Engineer
+Worker <|.. Janitor
+Worker <|.. Chef
+Eater <|.. Engineer
+Eater <|.. Chef
+Sleeper <|.. Janitor
+
+@enduml

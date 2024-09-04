@@ -1,0 +1,11 @@
+@startuml
+class InventoryManager {
+    - tools: List<Tool>
+    + InventoryManager()
+    + addTool(tool: Tool)
+    + deleteTool(toolId: int): boolean
+    + searchToolByName(toolName: String): List<Tool>
+    + searchToolById(toolId: int): Tool
+    + checkQuantity(tool: Tool): boolean
+}
+@enduml

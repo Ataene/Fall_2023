@@ -1,0 +1,17 @@
+@startuml
+class Shape {
+  +area(): double
+}
+
+class Rectangle {
+  +area(): double
+}
+
+class Circle {
+  +area(): double
+}
+
+Shape <|-- Rectangle
+Shape <|-- Circle
+
+@enduml

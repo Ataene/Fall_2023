@@ -1,0 +1,22 @@
+@startuml
+class Bird {
+  +fly()
+}
+
+class FlyingBird extends Bird {
+  +fly()
+}
+
+class Ostrich extends Bird {
+  +fly()
+}
+
+class Penguin extends Bird {
+  +fly()
+}
+
+Bird <|.. FlyingBird
+Bird <|.. Ostrich
+Bird <|.. Penguin
+
+@enduml

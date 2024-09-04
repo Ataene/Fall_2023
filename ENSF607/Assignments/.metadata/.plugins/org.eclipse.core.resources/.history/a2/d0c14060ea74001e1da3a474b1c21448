@@ -1,0 +1,4 @@
+@starmuml
+
+Alice -> Bob: Authentication Request
+@enduml

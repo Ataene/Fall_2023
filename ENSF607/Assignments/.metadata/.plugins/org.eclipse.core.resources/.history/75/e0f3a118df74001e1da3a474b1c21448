@@ -1,0 +1,16 @@
+public class User {
+    private String username;
+    private String email;
+
+    public User(String username, String email) {
+        this.username = username;
+        this.email = email;
+    }
+}
+
+public class UserManager {
+    public void createUser(String username, String email) {
+        User user = new User(username, email);
+        // Code for storing the user in a database
+    }
+}

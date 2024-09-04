@@ -1,0 +1,28 @@
+public class OrderItem {
+    private Tool tool; // The tool associated with this order item
+    private int quantityOrdered;
+
+    public OrderItem(Tool tool, int quantityOrdered) {
+        this.tool = tool;
+        this.quantityOrdered = quantityOrdered;
+    }
+
+    public Tool getTool() {
+        return tool;
+    }
+
+    public int getQuantityOrdered() {
+        return quantityOrdered;
+    }
+
+    public double getSubtotal() {
+        return tool.getPrice() * quantityOrdered;
+    }
+
+    @Override
+    public String toString() {
+        return "Item description: " + tool.getName() +
+               "\nAmount ordered: " + quantityOrdered +
+               "\nSupplier: " + tool.getSupplierId();
+    }
+}

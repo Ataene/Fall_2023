@@ -1,0 +1,48 @@
+@startuml
+
+Class Drawing {
+- lines: LinkedHashSet<Line>: void
++ DrawPolgon(lines: LinkedHashSet<Line>): void
+- perimeter(p: Polygon): double
++ main(args: String[]): void
+
+}
+
+class Line{
+- start: Point
+- end: Point
+- classID: int
+- objID: int
++ Line:(a: Point, b: Point)
++ distance(): double
++ toString(): String
+}
+
+class Point{
+- x: int
+- y: int
++ Point(x: int, y: int)
++ distance(Point a, Point b): double
++ toString(): String
+}
+
+class Polygon{
+- polygon: LinkedHashSet<Line>
+- objID: int
+- classID: int
+- it: Iterator<Line>
++ Polygon(polygon: LinkedHashSet<Line>)
++ getLine(): Iterator<Line>
++ toString(): String
++ classID(): int
+}
+
+
+Drawing -- Polygon: contains 
+Drawing --> Line: uses 
+Line --> Point: has 
+Polygon --> Line: contains 
+Point --> Line: has 
+Drawing --> Point: uses 
+
+@enduml

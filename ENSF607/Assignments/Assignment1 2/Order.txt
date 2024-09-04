@@ -1,0 +1,31 @@
+@startuml
+class Order {
+    - orderId: int
+    - dateOrdered: String
+    - itemDescription: String
+    - supplierInfo: Supplier
+    - requiredQuantity: int
+    + Order(orderId: int, dateOrdered: String, itemDescription: String, supplierInfo: Supplier, requiredQuantity: int)
+    + getOrderId(): int
+    + setOrderId(orderId: int): void
+    + getDateOrdered(): String
+    + setDateOrdered(dateOrdered: String): void
+    + getItemDescription(): String
+    + setItemDescription(itemDescription: String): void
+    + getSupplierInfo(): Supplier
+    + setSupplierInfo(supplierInfo: Supplier): void
+    + getRequiredQuantity(): int
+    + setRequiredQuantity(requiredQuantity: int): void
+    + toString(): String
+    + displayOrder(): void
+}
+
+class Supplier {
+    - companyName: String
+    + getCompanyName(): String
+    + setCompanyName(companyName: String): void
+}
+
+Order -- Supplier : supplierInfo
+
+@enduml

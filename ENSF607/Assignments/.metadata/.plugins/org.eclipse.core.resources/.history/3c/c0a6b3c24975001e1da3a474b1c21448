@@ -1,0 +1,12 @@
+@startuml
+class Worker {
+  +work()
+}
+
+class Engineer {
+  +work()
+}
+
+Worker <|-- Engineer
+
+@enduml

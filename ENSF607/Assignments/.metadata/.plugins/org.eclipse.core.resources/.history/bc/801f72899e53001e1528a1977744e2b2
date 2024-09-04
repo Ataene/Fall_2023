@@ -1,0 +1,46 @@
+
+public class Tools {
+	
+ private int Id;
+ 
+ private String name;
+ 
+ private int quantityInStock;
+ 
+ private double price;
+ 
+ private int supplierID;
+ 
+ public Tools(int Id, String name, int quantityInStock, double price, int supplierID) {
+	 
+	 this.Id = Id;
+	 
+	 this.name = name;
+	 
+	 this.quantityInStock = quantityInStock;
+	 
+	 this.price = price;
+	 
+	 this.supplierID = supplierID;
+	 
+ }
+ 
+ public int getID() {
+	 
+	 return Id;
+	 
+ }
+ 
+ public updateQuantity(int newQuantity){
+	 
+ }
+ 
+ public double getPrice() {
+	 
+ }
+ 
+ public String toString() {
+	 return "Tool ID: " + Id + "\nName: " + name + "\naQuantity in Stock: " + quantity + "\nPrice: " + price + "\nSupplier ID: " + supplierId;
+ }
+ 
+}

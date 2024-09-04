@@ -1,0 +1,26 @@
+@startuml
+
+class Tool {
+    - id: int
+    - description: String
+    - quantityInStock: int
+    + Tool(id: int, description: String, quantityInStock: int)
+    + getId(): int
+    + getDescription(): String
+    + getQuantityInStock(): int
+}
+
+class InventoryManager {
+    - tools: List<Tool>
+    + InventoryManager()
+    + addTool(tool: Tool)
+    + deleteTool(toolId: int): boolean
+    + searchToolByName(toolName: String): List<Tool>
+    + searchToolById(toolId: int): Tool
+    + checkQuantity(tool: Tool): boolean
+}
+
+InventoryManager --* Tool : contains
+
+@enduml
+

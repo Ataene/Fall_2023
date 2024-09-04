@@ -1,0 +1,51 @@
+/*
+ * Interface Switchable, LightBulb, Switch, Dimmer
+ * 
+ * use to implement
+ * 
+ * Dependency Inversion Principle - DIP
+ * 
+ * 
+ * 
+ */
+
+public interface Switchable {
+    void turnOn();
+    void turnOff();
+}
+
+public class LightBulb implements Switchable {
+    @Override
+    public void turnOn() {
+        System.out.println("LightBulb is on");
+    }
+
+    @Override
+    public void turnOff() {
+        System.out.println("LightBulb is off");
+    }
+}
+
+public class Switch {
+    private Switchable device;
+
+    public Switch(Switchable device) {
+        this.device = device;
+    }
+
+    public void control() {
+        // Code to toggle the device on and off
+    }
+}
+
+public class Dimmer {
+    private Switchable device;
+
+    public Dimmer(Switchable device) {
+        this.device = device;
+    }
+
+    public void control(int brightness) {
+        // Code to adjust the brightness of the device
+    }
+}

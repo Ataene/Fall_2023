@@ -1,0 +1,7 @@
+@startuml
+class Supplier {
+    - companyName: String
+    + getCompanyName(): String
+    + setCompanyName(companyName: String): void
+}
+@enduml

@@ -1,0 +1,39 @@
+@startuml
+interface Switchable {
+  +turnOn()
+  +turnOff()
+}
+
+class LightBulb implements Switchable {
+  +turnOn()
+  +turnOff()
+}
+
+class Fan implements Switchable {
+  +turnOn()
+  +turnOff()
+}
+
+interface Controller {
+  +control()
+}
+
+class Switch implements Controller {
+  -device: Switchable
+  +Switch(device: Switchable)
+  +control()
+}
+
+class Dimmer implements Controller {
+  -device: Switchable
+  +Dimmer(device: Switchable)
+  +control(brightness: int)
+}
+
+Switchable <|.. LightBulb
+Switchable <|.. Fan
+Controller <|.. Switch
+Controller <|.. Dimmer
+Switch --o Switchable
+Dimmer --o Switchable
+@enduml

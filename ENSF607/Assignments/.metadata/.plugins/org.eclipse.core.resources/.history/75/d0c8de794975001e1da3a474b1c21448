@@ -1,0 +1,14 @@
+@startuml
+class User {
+  -username: String
+  -email: String
+  +User(username: String, email: String)
+}
+
+class UserManager {
+  +createUser(username: String, email: String)
+}
+
+User --|> UserManager
+
+@enduml

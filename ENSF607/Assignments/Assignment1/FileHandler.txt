@@ -1,0 +1,7 @@
+@startuml
+
+class FileHandler {
+    + readSuppliersFromFile(filePath: String): List<Supplier>
+    + readToolsFromFile(filePath: String): List<Tool>
+}
+@enduml

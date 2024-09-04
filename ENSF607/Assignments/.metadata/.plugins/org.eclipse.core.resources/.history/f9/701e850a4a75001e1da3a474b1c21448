@@ -1,0 +1,12 @@
+@startuml
+class Bird {
+  +fly()
+}
+
+class Eagle {
+  +fly()
+}
+
+Bird <|-- Eagle
+
+@enduml

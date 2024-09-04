@@ -1,0 +1,15 @@
+public class User {
+    private String username;
+    private String email;
+
+    public User(String username, String email) {
+        this.username = username;
+        this.email = email;
+    }
+
+	public void User(String username2, String email2) {
+		// TODO Auto-generated constructor stub
+	}
+}
+
+

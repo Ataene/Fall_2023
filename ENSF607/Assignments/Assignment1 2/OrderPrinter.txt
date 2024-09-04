@@ -1,0 +1,57 @@
+@startuml
+
+class OrderPrinter {
+    + printOrder(order: Order): void
+    + main(args: String[]): void
+}
+
+class Order {
+    - orderId: int
+    - dateOrdered: String
+    - itemDescription: String
+    - supplierInfo: Supplier
+    - requiredQuantity: int
+    
+    + Order(orderId: int, dateOrdered: String, itemDescription: String, supplierInfo: Supplier, requiredQuantity: int)
+    + getOrderId(): int
+    + setOrderId(orderId: int): void
+    + getDateOrdered(): String
+    + setDateOrdered(dateOrdered: String): void
+    + getItemDescription(): String
+    + setItemDescription(itemDescription: String): void
+    + getSupplierInfo(): Supplier
+    + setSupplierInfo(supplierInfo: Supplier): void
+    + getRequiredQuantity(): int
+    + setRequiredQuantity(requiredQuantity: int): void
+    + toString(): String
+    + displayOrder(): void
+}
+
+class Supplier {
+    - companyName: String
+    
+    + getCompanyName(): String
+    + setCompanyName(companyName: String): void
+}
+
+class FileHandler {
+    + readSuppliersFromFile(filename: String): List<Supplier>
+    + readToolsFromFile(filename: String): List<Tool>
+}
+
+class Tool {
+    - id: int
+    - description: String
+    - quantityInStock: int
+    
+    + Tool(id: int, description: String, quantityInStock: int)
+    + getId(): int
+    + getDescription(): String
+    + getQuantityInStock(): int
+}
+
+OrderPrinter --> Order : uses
+OrderPrinter --> FileHandler : uses
+OrderPrinter --> Supplier : uses
+Order --> Supplier : supplierInfo
+@enduml

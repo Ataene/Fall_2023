@@ -1,0 +1,83 @@
+@startuml
+
+class Color{
+- colour: String    
++ setColour(newColour: String): void 
++ toString(): String 
+}
+
+class Test{
+- text: String
++ Text(text: String)
++ setText(newText: String): void 
++ getText(): String             
++ toString(): String 
+}
+
+class Point{
+ - colour: Colour     
+ - xCoordinate: Double 
+ - yCoordinate: Double
+ - Point(a: Double a, b: Double b, c: Colour c)
+ + toString(): String  
+ + getx(): Double      
+ + setx(newvalue: Double): void
+ + gety(): Double 
+ + sety(newvalue: Double): void 
+ + distance(other: Point): Double 
+ + distance(that: Point, other: Point): Double 
+}
+
+Abstract Shape  {
+ # origin: Point  
+ # name: Text
+ # area(): Double
+ # perimeter(): Double
+ # volume(): Double
+ # Shape(Double x_origin, Double y_origin, String name, Colour colour)     
+ # getOrigin(): Point 
+ # getName(): String 
+ # distance(other: Shape): Double 
+ # distance(a: Shape, b: Shape): Double 
+ # move(dx: Double, dy: Double): void 
+ + toString(): String 
+}
+
+class Rectangle extends Shape {
+ # width: Double  
+ # length: Double
+ + Rectangle(Double x_origin, Double y_origin, Double newlength, Double newwidth, String  name, Colour colour)
+ # set_length(newlength: Double): void 
+ # get_length(): Double 
+ # area(): Double  
+ # perimeter(): Double 
+ # volume(): Double 
+ + toString(): String
+}
+class Cicle extends Shape {
+ -radius: Double
+ Circle(Double x_origin, Double y_origin, Double newradius,  String name, Colour colour)
+ + set_radius(newradius: Double): void
+ + get_radius(): Double
+ + area(): Double 
+ + perimeter(): Double
+ + volume(): Double 
+ + toString(): String 
+}
+
+class Prism extends Rectangle{
+ - height: Double
+ + Prism(Double x, Double y, Double l, Double w, Double h, String  name, Colour colour) 
+ + set_height(h: Double): void 
+ + height(): Double 
+ + area(): Double 
+ + perimeter(): Double 
+ + volume(): Double 
+ + toString(): String 
+}
+
+class Geometry{
+- shapes: TreeSet<Shape> 
++ main(args: String[]): void 
+}
+@enduml

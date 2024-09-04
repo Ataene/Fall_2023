@@ -1,0 +1,28 @@
+@startuml
+class User {
+  -username: String
+  -email: String
+  +User(username: String, email: String)
+  +getUsername(): String
+  +getEmail(): String
+}
+
+class UserManager {
+  -users: List<User>
+  +createUser(username: String, email: String)
+  +updateUser(user: User, newEmail: String)
+  +deleteUser(user: User)
+}
+
+class UserDatabase {
+  -users: Map<String, User>
+  +getUser(username: String): User
+  +addUser(user: User)
+  +updateUser(user: User, newEmail: String)
+  +removeUser(user: User)
+}
+
+User --|> UserManager
+UserManager --> UserDatabase
+
+@enduml
